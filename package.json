@@ -1,0 +1,33 @@
+{
+  "name": "echanga",
+  "version": "1.0.0",
+  "description": "A wrapper for echanga bulk sms/messaging service",
+  "main": "lib/echanga.js",
+  "scripts": {
+    "test": "mocha test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://lordkay@bitbucket.org/echanga-js-wrapper"
+  },
+  "keywords": [
+    "echanga",
+    "sms",
+    "bulk",
+    "messaging"
+  ],
+  "author": "Lord Kay",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "xlsx": "^0.15.4",
+    "got": "^10.7.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "mocha": "^7.1.1",
+    "nock": "^12.0.3",
+    "prettier": "^2.0.4"
+  }
+}

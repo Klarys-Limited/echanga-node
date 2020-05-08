@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const nock = require('nock');
 const Echanga = require('../lib/echanga');
+const { join } = require('path');
 
 const sms = Echanga(
   'cjGebhwu7qNbpN7DAMtBf90CXW90zanx/bSnMXSR/wxsd6lMRO5oP5YfJrauvRWprkZo/3Uk57QDrvnBKueSuQH46q5OTA5tCS1ZsLSILr' +
@@ -25,9 +26,12 @@ describe('Testing the Echanga template module', function () {
         mytemplates: 'it is created by the node js library',
       },
     ]);
-    sms.templates().list().then(response => {
-      expect(response.data).to.be.a("array")
-    })
+    sms
+      .templates()
+      .list()
+      .then((response) => {
+        expect(response.data).to.be.a('array');
+      });
     done();
   });
 
@@ -107,6 +111,24 @@ describe('Testing the Echanga sms module', function () {
           { firstname: 'Jane', lastname: 'Doe', phone: '233200746417' },
         ],
         sentby: 'KlarysLtd',
+      });
+    done();
+  });
+
+  it('should send sms using the csv or excel file', function (done) {
+    let data = {
+      type: '0',
+      message:
+        'A quick message to see how good my calculation is. I am here on a test pilot',
+      sentby: 'KlarysLtd',
+      file: join(__dirname, '/contacts.xlsx'),
+    };
+    sms
+      .messaging()
+      .excel(data)
+      .then((response) => {
+        expect(response.status).to.equal(200);
+        expect(response.data).to.be.an('object');
       });
     done();
   });

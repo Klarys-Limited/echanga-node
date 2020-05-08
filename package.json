@@ -1,7 +1,7 @@
 {
   "name": "echanga",
   "version": "1.0.0",
-  "description": "A wrapper for echanga bulk sms/messaging service",
+  "description": "A Node js library for the echanga bulk sms messaging APIs",
   "main": "lib/echanga.js",
   "scripts": {
     "test": "mocha test/*"
@@ -16,12 +16,16 @@
     "bulk",
     "messaging"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Lord Kay",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
-    "xlsx": "^0.15.4",
-    "got": "^10.7.0"
+    "got": "^10.7.0",
+    "npm": "^6.14.5",
+    "xlsx": "^0.15.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",

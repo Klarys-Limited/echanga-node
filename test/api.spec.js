@@ -121,7 +121,7 @@ describe('Testing the Echanga sms module', function () {
       message:
         'A quick message to see how good my calculation is. I am here on a test pilot',
       sentby: 'KlarysLtd',
-      file: join(__dirname, '/contacts.xlsx'),
+      message_contacts: join(__dirname, '/contacts.xlsx'),
     };
     sms
       .messaging()
